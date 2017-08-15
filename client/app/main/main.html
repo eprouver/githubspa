@@ -1,0 +1,34 @@
+<p>Webhooks point to this repository: <a target="_blank" href="https://github.com/eprouver/githubapi">https://github.com/eprouver/githubapi</a></p>
+
+<current-date></current-date>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <feed></feed>
+    </div>
+    <div class="col-xs-6">
+      <h1 class="page-header">Microsoft Commits:</h1>
+
+        <div ng-repeat="thing in $ctrl.awesomeThings" class="well"><button type="button" class="close" ng-click="$ctrl.deleteThing(thing)">&times;</button>
+          <p ng-show="thing.name"><label>Name:</label> {{thing.name}}</p>
+          <p ng-show="thing.email"><label>Email:</label> {{thing.email}}</p>
+          <p ng-show="thing.timestamp"><label>Timestamp:</label> {{thing.timestamp | date:'short'}}</p>
+          <p ng-show="thing.username"><label>Username:</label> {{thing.username}}</p>
+          <p ng-show="thing.commit"><label>Commit</label>
+              <a target="_blank" ng-href="https://github.com/eprouver/githubapi/commit/{{thing.commit}}">{{thing.commit}}</a>
+          </p>
+          <p ng-show="thing.message"><label>Message</label> {{thing.message}}</p>
+        </div>
+
+        <hr/>
+
+        <button type="submit" class="btn btn-primary" ng-click="$ctrl.addThing()">Add Test Microsoft Commit</button>
+        <button type="submit" class="btn btn-standard" ng-click="$ctrl.addThingSilent()">Add Test Commit (not Microsoft)</button>
+
+    </div>
+  </div>
+
+
+
+</div>

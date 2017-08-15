@@ -1,0 +1,20 @@
+<div>
+  <h1 class="page-header">Feed:</h1>
+
+  <div class="alert alert-danger" ng-if="$ctrl.error">
+    <h2>Error from Github:</h2>
+    {{$ctrl.error}};
+  </div>
+
+  <div class="row" ng-repeat="e in $ctrl.events">
+    <div class="col-xs-3">
+      <img height="50" class="img-circle img" ng-src="{{e.actor.avatar_url}}"/>
+      <p><a target="_blank" ng-href="https://github.com/{{e.actor.display_login}}">{{e.actor.display_login}}</a></p>
+    </div>
+    <div class="col-xs-9">
+      <p ng-show="e.type"><label>Type:</label> {{e.type}}</p>
+      <p ng-show="e.created_at"><label>Timestamp:</label> {{e.created_at | date:'short'}}</p>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div>
+  <div ng-show="!dateCtrl.error" class="alert alert-success">
+    Server Date: {{dateCtrl.date | date:'medium'}}
+  </div>
+  <div ng-show="dateCtrl.error" class="alert alert-danger">
+    Error getting server date
+  </div>
+</div>
